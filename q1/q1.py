@@ -13,3 +13,14 @@ def greaterThan(a, b):
 
 result = sum(list(map(greaterThan, numbersLess, numbers)))
 print(result)
+
+
+# Part 2
+slidingSums = []
+
+for i in range(2, len(numbers)):
+  slidingSums.append(numbers[i] + numbers[i-1] + numbers[i-2])
+
+slidingSumsLess = slidingSums[1::]
+result = sum(list(map(greaterThan, slidingSumsLess, slidingSums)))
+print(result)
